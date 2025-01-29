@@ -1,0 +1,31 @@
+{% extends 'Overseer/base.html' %}
+
+{% block title %}Home - Overseer{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">Your Boards</h1>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Your Boards</h2>
+            <a href="{% url 'create_board' %}" class="btn btn-primary">Create a New Board</a>
+        </div>
+        <hr>
+
+        <!-- List of Boards -->
+        {% if boards %}
+        <div class="list-group">
+            {% for board in boards %}
+            <a href="{% url 'board_detail' pk=board.pk %}" class="list-group-item list-group-item-action">
+                <h5 class="mb-1">{{ board.name }}</h5>
+                <p class="mb-1">{{ board.description }}</p>
+                <small>Created: {{ board.created_at }}</small>
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No boards found. Start by creating one!</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
