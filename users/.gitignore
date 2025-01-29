@@ -1,0 +1,52 @@
+# Ignore Python compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore environment files
+.env
+*.env
+venv/
+env/
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.py[co]
+
+# Ignore Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Ignore media/uploads (optional)
+media/
+uploads/
+
+# Ignore static files (if using collectstatic)
+staticfiles/
+static/
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+*.cover
+*.pycover
+.hypothesis/
+
+# Ignore node_modules (if using frontend dependencies)
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# Ignore compiled dependencies
+*.egg-info/
+dist/
+build/
